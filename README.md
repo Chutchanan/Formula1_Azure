@@ -97,9 +97,7 @@ Scheduling
 
 **3. Project Implementation**
 
-```
 3.1 Mounting databricks to ADLS so that we can access the ADLS directly by databricks.
-```
 1. Create a Service Principal: Create a service principal in Azure Active Directory, which will be used for
     authentication without interactive login.
 2. Assign Permissions: Assign the necessary permissions to the service principal for ADLS access, in this
@@ -111,15 +109,10 @@ Scheduling
 5. Mount ADLS: Use a Databricks notebook to mount the ADLS filesystem using Databricks File System
     (DBFS) commands. Utilize the credentials retrieved from Azure Key Vault for this process.
 
-```
 3.2 Data Ingestion
-```
-```
 All data are uploaded to ADLS in various file formats to learn different types of ingestion.
-```
-```
+
 3.2.1 Ingest all eight files into our process container.
-```
 - Circuits – csv
 - Races – csv
 - Constructors – single line json
@@ -129,24 +122,15 @@ All data are uploaded to ADLS in various file formats to learn different types o
 - Lap Times – split csv files
 - Qualifying – split multiline json files
 
-```
 3.2.2 Apply correct schema with appropriate column names and data types.
-```
-```
+
 3.2.3 Include audit columns to track the ingestion date.
-```
-```
-3.2.4 Store ingested data as Parquet files for various workloads, including machine learning, reporting,
-```
-```
-and SQL analytics.
-```
-```
+
+3.2.4 Store ingested data as Parquet files for various workloads, including machine learning, reporting, and SQL analytics.
+
 3.2.5 Ensure the logic can handle incremental data.
-```
-```
+
 3.3 Data Transformation
-```
 Joined all necessary tables (results, races, circuits, drivers, constructors) to create race result table and store in presentation layer.
 
 
