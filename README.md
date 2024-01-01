@@ -35,6 +35,8 @@ Project Architecture
 ```
 Entity Relationship Diagram
 ```
+![image](https://github.com/Chutchanan/Formula1_Azure/assets/134831110/bd2b726b-b44a-4ce1-a1d7-5d161d726c1a)
+
 1. **drivers** : Contains information about the drivers such as driver ID, driver reference, number, code, forename,
     surname, date of birth (dob), nationality, and URL for more details.
 2. **constructors** : Holds data about the teams (constructors), including an ID, reference, name, nationality, and
@@ -145,9 +147,12 @@ constructors and make a visualization.
 ```
 Dominant drivers
 ```
+![image](https://github.com/Chutchanan/Formula1_Azure/assets/134831110/19606257-53e5-4ff6-b5e6-d1179b6a43a6)
+
 ```
 Dominant teams
 ```
+![image](https://github.com/Chutchanan/Formula1_Azure/assets/134831110/a315716b-c03a-483e-a8db-eccac7d07cbd)
 
 ```
 3.5 Data Pipeline
@@ -163,10 +168,15 @@ bypassed, optimizing my processing efficiency.
 ```
 Ingestion Pipeline
 ```
+![image](https://github.com/Chutchanan/Formula1_Azure/assets/134831110/0b952895-df1e-4a18-80ab-e6fd28012d06)
+
 ```
 Transformation Pipeline
 ```
+![image](https://github.com/Chutchanan/Formula1_Azure/assets/134831110/3d3675f9-7072-4114-9504-b0d43e53f8a7)
+
 ```
 Process Pipeline
 ```
+![image](https://github.com/Chutchanan/Formula1_Azure/assets/134831110/185125e6-1d6e-4420-8fcd-ee62e113926b)
 
