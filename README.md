@@ -23,6 +23,8 @@ Key Technologies
 ```
 Project Architecture
 ```
+![image](https://github.com/Chutchanan/Formula1_Azure/assets/134831110/3607dfac-747b-4e31-89fa-37fa55130d5a)
+
 - Azure Data Lake Storage (ADLS) is used for storing data in various stages from raw to presentation.
 - Databricks is involved in the ingestion, transformation, and analysis phase.
 - ADF is used to automate the data pipeline workflows, coordinating the movement of data across various
@@ -30,9 +32,9 @@ Project Architecture
     transformation and analysis.
 - PowerBI is a visualization tool that connects to the processed data to create reports and dashboards.
 
-
-**Entity Relationship Diagram**
-
+```
+Entity Relationship Diagram
+```
 1. **drivers** : Contains information about the drivers such as driver ID, driver reference, number, code, forename,
     surname, date of birth (dob), nationality, and URL for more details.
 2. **constructors** : Holds data about the teams (constructors), including an ID, reference, name, nationality, and
