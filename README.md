@@ -8,9 +8,6 @@ processing and analysis of Formula One racing data. The project encompassed vari
 and visualization tools, providing an immersive learning experience in data engineering.
 ```
 ```
-All code is available on https://github.com/Chutchanan/Formula1_Azure
-```
-```
 Data source for this project: https://ergast.com/mrd/
 ```
 ```
