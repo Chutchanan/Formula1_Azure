@@ -136,9 +136,11 @@ Query data from race result from a presentation layer to calculate dominant driv
 constructors and make a visualization.
 
 Dominant drivers
+
 ![image](https://github.com/Chutchanan/Formula1_Azure/assets/134831110/19606257-53e5-4ff6-b5e6-d1179b6a43a6)
 
 Dominant teams
+
 ![image](https://github.com/Chutchanan/Formula1_Azure/assets/134831110/a315716b-c03a-483e-a8db-eccac7d07cbd)
 
 ### 3.5 Data Pipeline
@@ -156,8 +158,10 @@ Ingestion Pipeline
 ![image](https://github.com/Chutchanan/Formula1_Azure/assets/134831110/0b952895-df1e-4a18-80ab-e6fd28012d06)
 
 Transformation Pipeline
+
 ![image](https://github.com/Chutchanan/Formula1_Azure/assets/134831110/3d3675f9-7072-4114-9504-b0d43e53f8a7)
 
 Process Pipeline
+
 ![image](https://github.com/Chutchanan/Formula1_Azure/assets/134831110/185125e6-1d6e-4420-8fcd-ee62e113926b)
 
