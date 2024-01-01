@@ -1,18 +1,16 @@
 # Formula1 Data Engineering Project
 
-**1. Project Overview**
+## 1. Project Overview
 
-```
+
 This is a dedicated learning project with a primary focus on utilizing Azure Databricks for in-depth data
 processing and analysis of Formula One racing data. The project encompassed various data engineering
 and visualization tools, providing an immersive learning experience in data engineering.
-```
-```
+
 Data source for this project: https://ergast.com/mrd/
-```
-```
-Key Technologies
-```
+
+### Key Technologies
+
 - Azure Databricks: Leveraged Azure Databricks for advanced data extraction, transformation, and
     analysis, enabling a deep dive into data engineering techniques.
 - Azure Data Factory (ADF): Utilized Azure Data Factory for orchestrating data workflows, including data
@@ -20,9 +18,9 @@ Key Technologies
 - PowerBI: Implemented PowerBI for interactive data visualization, facilitating hands-on exploration of
     data engineering and visualization tools.
 
-```
-Project Architecture
-```
+
+### Project Architecture
+
 ![image](https://github.com/Chutchanan/Formula1_Azure/assets/134831110/3607dfac-747b-4e31-89fa-37fa55130d5a)
 
 - Azure Data Lake Storage (ADLS) is used for storing data in various stages from raw to presentation.
@@ -32,9 +30,9 @@ Project Architecture
     transformation and analysis.
 - PowerBI is a visualization tool that connects to the processed data to create reports and dashboards.
 
-```
-Entity Relationship Diagram
-```
+
+### Entity Relationship Diagram
+
 ![image](https://github.com/Chutchanan/Formula1_Azure/assets/134831110/bd2b726b-b44a-4ce1-a1d7-5d161d726c1a)
 
 1. **drivers** : Contains information about the drivers such as driver ID, driver reference, number, code, forename,
@@ -64,11 +62,10 @@ Entity Relationship Diagram
     describe the outcome of a race for a driver (e.g., finished, collision, engine failure).
 
 
-**2. Project Requirements**
+## 2. Project Requirements
 
-```
+
 Data Ingestion
-```
 - Ingest All 8 files into the data lake.
 - Ingested data must have audit columns.
 - Ingested data must be stored in columnar format (i.e., Parquet).
@@ -76,32 +73,28 @@ Data Ingestion
 - Must be able to analyze the ingested data via SQL.
 - Ingestion logic must be able to handle incremental load.
 
-```
+
 Data Transformation
-```
 - Join the key information required for reporting to create a new table.
 - Transformed data must be stored in columnar format (i.e., Parquet).
 - Must be able to analyze the transformed data via SQL.
 - Transformation logic must be able to handle incremental load.
 
-```
+
 Report
-```
 - Driver standings
 - Constructor standings
 
-```
 Scheduling
-```
 - Scheduled to run every Sunday at 10PM.
 - Ability to monitor pipelines.
 - Ability to re-run failed pipelines.
 - Ability to set up alerts for failures.
 
 
-**3. Project Implementation**
+## 3. Project Implementation
 
-3.1 Mounting databricks to ADLS so that we can access the ADLS directly by databricks.
+### 3.1 Mounting databricks to ADLS so that we can access the ADLS directly by databricks.
 1. Create a Service Principal: Create a service principal in Azure Active Directory, which will be used for
     authentication without interactive login.
 2. Assign Permissions: Assign the necessary permissions to the service principal for ADLS access, in this
@@ -113,10 +106,10 @@ Scheduling
 5. Mount ADLS: Use a Databricks notebook to mount the ADLS filesystem using Databricks File System
     (DBFS) commands. Utilize the credentials retrieved from Azure Key Vault for this process.
 
-3.2 Data Ingestion
+### 3.2 Data Ingestion
 All data are uploaded to ADLS in various file formats to learn different types of ingestion.
 
-3.2.1 Ingest all eight files into our process container.
+#### 3.2.1 Ingest all eight files into our process container.
 - Circuits – csv
 - Races – csv
 - Constructors – single line json
@@ -126,37 +119,30 @@ All data are uploaded to ADLS in various file formats to learn different types o
 - Lap Times – split csv files
 - Qualifying – split multiline json files
 
-3.2.2 Apply correct schema with appropriate column names and data types.
+#### 3.2.2 Apply correct schema with appropriate column names and data types.
 
-3.2.3 Include audit columns to track the ingestion date.
+#### 3.2.3 Include audit columns to track the ingestion date.
 
-3.2.4 Store ingested data as Parquet files for various workloads, including machine learning, reporting, and SQL analytics.
+#### 3.2.4 Store ingested data as Parquet files for various workloads, including machine learning, reporting, and SQL analytics.
 
-3.2.5 Ensure the logic can handle incremental data.
+#### 3.2.5 Ensure the logic can handle incremental data.
 
-3.3 Data Transformation
+### 3.3 Data Transformation
 Joined all necessary tables (results, races, circuits, drivers, constructors) to create race result table and store in presentation layer.
 
+### 3.4 Data Analysis
 
-```
-3.4 Data Analysis
-```
 Query data from race result from a presentation layer to calculate dominant drivers and
 constructors and make a visualization.
 
-```
 Dominant drivers
-```
 ![image](https://github.com/Chutchanan/Formula1_Azure/assets/134831110/19606257-53e5-4ff6-b5e6-d1179b6a43a6)
 
-```
 Dominant teams
-```
 ![image](https://github.com/Chutchanan/Formula1_Azure/assets/134831110/a315716b-c03a-483e-a8db-eccac7d07cbd)
 
-```
-3.5 Data Pipeline
-```
+### 3.5 Data Pipeline
+
 I have constructed a comprehensive 'Process Pipeline' within Azure Data Factory (ADF), which
 effectively encapsulates and manages the functions of data ingestion and data transformation pipelines.
 This pipeline incorporates a 'Get Metadata' activity to retrieve and verify folder names against 'If Condition'
@@ -165,18 +151,13 @@ trigger corresponds with the intended folder name. Upon a successful match, the 
 proceeds to execute a series of Databricks notebooks. If there is no match, the execution of the pipeline is
 bypassed, optimizing my processing efficiency.
 
-```
 Ingestion Pipeline
-```
+
 ![image](https://github.com/Chutchanan/Formula1_Azure/assets/134831110/0b952895-df1e-4a18-80ab-e6fd28012d06)
 
-```
 Transformation Pipeline
-```
 ![image](https://github.com/Chutchanan/Formula1_Azure/assets/134831110/3d3675f9-7072-4114-9504-b0d43e53f8a7)
 
-```
 Process Pipeline
-```
 ![image](https://github.com/Chutchanan/Formula1_Azure/assets/134831110/185125e6-1d6e-4420-8fcd-ee62e113926b)
 
