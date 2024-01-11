@@ -78,7 +78,6 @@ Data Transformation
 - Join the key information required for reporting to create a new table.
 - Transformed data must be stored in columnar format (i.e., Parquet).
 - Must be able to analyze the transformed data via SQL.
-- Transformation logic must be able to handle incremental load.
 
 
 Report
